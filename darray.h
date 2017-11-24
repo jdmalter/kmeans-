@@ -1,16 +1,21 @@
 #ifndef DARRAY_H
 #define DARRAY_H
 
+#include <array>
 #include <string>
 
 using namespace std;
 
 typedef const size_t csize;
-typedef const double* darray;
 
-double distance(csize d, darray a, darray b);
+template<csize d>
+using darray = array<double, d>;
 
-string toPrettyString(csize d, darray a);
+template<csize d>
+double distance(darray<d> &a, darray<d> &b);
+
+template<csize d>
+string toPrettyString(darray<d> &a);
 
 #endif /* DARRAY_H */
 

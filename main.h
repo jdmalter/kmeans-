@@ -2,7 +2,9 @@
 #define MAIN_H
 
 #include <fstream>
+#include <vector>
 
+#include "darray.h"
 
 using namespace std;
 
@@ -30,15 +32,15 @@ ofstream createOutput(const char* s)
     return output;
 }
 
+template<csize d>
 void write(ofstream &output, 
-        csize d, 
-        const vector<darray> &vectors, 
+        const vector<darray<d>> &vectors, 
         const vector<string> &strings, 
         csize k, 
-        const AssignmentsClusters assignmentsClusters)
+        const AssignmentsClusters<d> assignmentsClusters)
 {
-    const std::vector<int> assignments = assignmentsClusters.assignments;
-    const std::vector<double*> clusters = assignmentsClusters.clusters;
+    const vector<int> assignments = assignmentsClusters.assignments;
+    const vector<darray<d>> clusters = assignmentsClusters.clusters;
     
     for (int i = 0; i < k; i++)
     {
@@ -51,10 +53,12 @@ void write(ofstream &output,
             }
         }
         
-        output << "cluster at " << toPrettyString(d, clusters[i]) << " with " << group.size() << " vectors" << endl;
+        string clusterString(begin(clusters[i]), end(clusters[i]));
+        output << "cluster at " << clusterString << " with " << group.size() << " vectors" << endl;
         for (int j = 0; j < group.size(); j++)
         {
-            output << toPrettyString(d, vectors[group[j]]) << " " << strings[group[j]] << endl;
+            string vectorString(begin(vectors[group[j]]), end(vectors[group[j]]));
+            output << vectorString << " " << strings[group[j]] << endl;
         }
         output << endl;
     }

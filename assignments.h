@@ -7,14 +7,14 @@
 
 static constexpr double MAX = numeric_limits<double>::max();
 
-void assign(csize d, 
-        vector<int> &assignments, 
-        const vector<darray> &vectors, 
-        const vector<double*> &clusters);
+template<csize d>
+void assign(vector<int> &assignments, 
+        const vector<darray<d>> &vectors, 
+        const vector<darray<d>> &clusters);
 
-void update(csize d, 
-        vector<double*> &clusters, 
-        const vector<darray> &vectors, 
+template<csize d>
+void update(vector<darray<d>> &clusters, 
+        const vector<darray<d>> &vectors, 
         const vector<int> &assignments);
 
 #endif /* ASSIGNMENTS_H */

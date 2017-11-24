@@ -1,16 +1,16 @@
 #include "assignments.h"
 
-void assign(csize d, 
-        vector<int> &assignments, 
-        const vector<darray> &vectors, 
-        const vector<double*> &clusters)
+template<csize d>
+void assign(vector<int> &assignments, 
+        const vector<darray<d>> &vectors, 
+        const vector<darray<d>> &clusters)
 {
     for (int i = 0; i < vectors.size(); i++)
     {
         double min = MAX;
         for (int j = 0; j < clusters.size(); j++)
         {
-            double dis = distance(d, vectors[i], clusters[j]);
+            double dis = distance<d>(vectors[i], clusters[j]);
             if (min > dis)
             {
                 min = dis;
@@ -20,9 +20,9 @@ void assign(csize d,
     }
 }
 
-void update(csize d, 
-        vector<double*> &clusters, 
-        const vector<darray> &vectors, 
+template<csize d>
+void update(vector<darray<d>> &clusters, 
+        const vector<darray<d>> &vectors, 
         const vector<int> &assignments)
 {
     for (int i = 0; i < clusters.size(); i++)

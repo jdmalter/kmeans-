@@ -1,3 +1,4 @@
+#include <array>
 #include <ctime>
 #include <iostream>
 #include <sstream>
@@ -17,15 +18,15 @@ int main(int argc, char** argv) {
     ofstream output = createOutput(argv[2]);
     csize k = stoi(argv[3]);
     
-    const auto vectorSelector = [=] (stringstream &ss) -> double*
+    const auto vectorSelector = [=] (stringstream &ss) -> darray<d>
     {
         string token;
-        double* array = (double*)malloc(d * sizeof(double));
+        darray<d>* pointer = new darray<d>;
         for (int i = 0; i < d && getline(ss, token, ','); i++)
         {
-            array[i] = stod(token);
+            (*pointer)[i] = stod(token);
         }
-        return array;
+        return *pointer;
     };
     const auto labelSelector = [=] (stringstream &ss) -> string
     {
@@ -34,7 +35,7 @@ int main(int argc, char** argv) {
         return token;
     };
     
-    vector<darray> vectors;
+    vector<darray<d>> vectors;
     vector<string> strings;
     for (string line; getline(input, line);)
     {
@@ -43,8 +44,9 @@ int main(int argc, char** argv) {
         strings.push_back(labelSelector(ss));
     }
     
-    srand(time(NULL));    
-    write(output, d, vectors, strings, k,  run(d, vectors, k));
+    srand(time(NULL));
+    AssignmentsClusters<d> assignmentsClusters = run<d>(vectors, k);
+    write<d>(output, vectors, strings, k, assignmentsClusters);
     
     input.close();
     output.close();    

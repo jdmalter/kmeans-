@@ -5,14 +5,36 @@ void assign(vector<darray<d>> &vectors, const vector<darray<d>> &clusters)
 {
     for (int i = 0; i < vectors.size(); i++)
     {
-        double min = MAX;
+        double minDist = MAX;
         for (int j = 0; j < clusters.size(); j++)
         {
-            const double dis = darrayDistance<d>(vectors[i], clusters[j]);
-            if (min > dis)
+            const double dist = darrayDistance(vectors[i], clusters[j]);
+            if (minDist > dist)
             {
-                min = dis;
+                minDist = dist;
                 vectors[i].assignment = j;
+            }
+        }
+    }
+}
+
+template<csize d>
+void optimzedAssign(vector<darray<d>> &vectors, const vector<darray<d>> &clusters)
+{
+    for (int i = 0; i < vectors.size(); i++)
+    {
+        double minDist = MAX;
+        for (int j = 0; j < clusters.size(); j++)
+        {
+            const double lbDist = darrayLowerBound<d>(vectors[i], clusters[j]);
+            if (minDist > lbDist)
+            {
+                const double dist = darrayDistance<d>(vectors[i], clusters[j]);
+                if (minDist > dist)
+                {
+                    minDist = dist;
+                    vectors[i].assignment = j;
+                }
             }
         }
     }

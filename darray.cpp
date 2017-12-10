@@ -1,4 +1,3 @@
-#include <math.h>
 #include "darray.h"
 
 template<csize d>
@@ -10,6 +9,18 @@ double darrayDistance(const darray<d> &a, const darray<d> &b)
         sum += (a[i] - b[i]) * (a[i] - b[i]);
     }
     return sqrt(sum);
+}
+
+template<csize d>
+double darrayLowerBound(const darray<d> &a, const darray<d> &b)
+{
+    return abs(a.magnitude - b.magnitude);
+}
+
+template<csize d>
+double darrayUpperBound(const darray<d> &a, const darray<d> &b)
+{
+    return a.magnitude + b.magnitude;
 }
 
 template<csize d>

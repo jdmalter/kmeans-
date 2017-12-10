@@ -1,9 +1,7 @@
 #include "assignments.h"
 
 template<csize d>
-void assign(vector<int> &assignments, 
-        const vector<darray<d>> &vectors, 
-        const vector<darray<d>> &clusters)
+void assign(vector<darray<d>> &vectors, const vector<darray<d>> &clusters)
 {
     for (int i = 0; i < vectors.size(); i++)
     {
@@ -14,16 +12,14 @@ void assign(vector<int> &assignments,
             if (min > dis)
             {
                 min = dis;
-                assignments[i] = j;
+                vectors[i].assignment = j;
             }
         }
     }
 }
 
 template<csize d>
-void update(vector<darray<d>> &clusters, 
-        const vector<darray<d>> &vectors, 
-        const vector<int> &assignments)
+void update(vector<darray<d>> &clusters, const vector<darray<d>> &vectors)
 {
     for (int i = 0; i < clusters.size(); i++)
     {
@@ -34,7 +30,7 @@ void update(vector<darray<d>> &clusters,
         }
         for (int j = 0; j < vectors.size(); j++)
         {
-            if (i == assignments[j])
+            if (i == vectors[j].assignment)
             {
                 for (int k = 0; k < d; k++)
                 {
@@ -47,5 +43,6 @@ void update(vector<darray<d>> &clusters,
         {
             clusters[i][j] /= count;
         }
+        clusters[i].computeMagnitude();
     }
 }

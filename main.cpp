@@ -21,11 +21,12 @@ int main(int argc, char** argv) {
     const auto vectorSelector = [=] (stringstream &ss) -> darray<d>
     {
         string token;
-        darray<d>* pointer = new darray<d>;
+        array<double, d>* components = new array<double, d>;
         for (int i = 0; i < d && getline(ss, token, ','); i++)
         {
-            (*pointer)[i] = stod(token);
+            (*components)[i] = stod(token);
         }
+        darray<d>* pointer = new darray<d>(*components);
         return *pointer;
     };
     const auto labelSelector = [=] (stringstream &ss) -> string
@@ -45,8 +46,8 @@ int main(int argc, char** argv) {
     }
     
     srand(time(NULL));
-    AssignmentsClusters<d> assignmentsClusters = run<d>(vectors, k, iterations);
-    write<d>(output, vectors, strings, k, assignmentsClusters);
+    vector<darray<d>> clusters = run<d>(vectors, k, iterations);
+    write<d>(output, vectors, strings, k, clusters);
     
     input.close();
     output.close();    

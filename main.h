@@ -37,17 +37,14 @@ void write(ofstream &output,
         const vector<darray<d>> &vectors, 
         const vector<string> &strings, 
         csize k, 
-        const AssignmentsClusters<d> assignmentsClusters)
+        const vector<darray<d>> clusters)
 {
-    const vector<int> assignments = assignmentsClusters.assignments;
-    const vector<darray<d>> clusters = assignmentsClusters.clusters;
-    
     for (int i = 0; i < k; i++)
     {
         vector<int> group;
-        for (int j = 0; j < assignments.size(); j++)
+        for (int j = 0; j < vectors.size(); j++)
         {
-            if (i == assignments[j])
+            if (i == vectors[j].assignment)
             {
                 group.push_back(j);
             }

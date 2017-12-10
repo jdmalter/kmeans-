@@ -8,14 +8,10 @@
 static constexpr double MAX = numeric_limits<double>::max();
 
 template<csize d>
-void assign(vector<int> &assignments, 
-        const vector<darray<d>> &vectors, 
-        const vector<darray<d>> &clusters);
+void assign(vector<darray<d>> &vectors, const vector<darray<d>> &clusters);
 
 template<csize d>
-void update(vector<darray<d>> &clusters, 
-        const vector<darray<d>> &vectors, 
-        const vector<int> &assignments);
+void update(vector<darray<d>> &clusters, const vector<darray<d>> &vectors);
 
 #endif /* ASSIGNMENTS_H */
 

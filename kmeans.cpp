@@ -6,26 +6,26 @@ vector<darray<d>> takeRandom(const vector<darray<d>> &vectors, csize k)
     vector<darray<d>> clusters;
     for (int i = 0; i < k; i++)
     {
-        darray<d>* pointer = new darray<d>;
+        array<double, d>* components = new array<double, d>;
         int random = rand() % vectors.size();
         for (int j = 0; j < d; j++)
         {
-            (*pointer)[j] = vectors[random][j];
+            (*components)[j] = vectors[random][j];
         }
+        darray<d>* pointer = new darray<d>(*components);
         clusters.push_back(*pointer);
     }
     return clusters;
 }
 
 template<csize d>
-AssignmentsClusters<d> run(const vector<darray<d>> &vectors, csize k, cu32 iterations)
+vector<darray<d>> run(vector<darray<d>> &vectors, csize k, cu32 iterations)
 {
     vector<darray<d>> clusters = takeRandom<d>(vectors, k);
-    vector<int> assignments(vectors.size());
     for (int i = 0; i < iterations; i++)
     {
-        assign<d>(assignments, vectors, clusters);
-        update<d>(clusters, vectors, assignments);
+        assign<d>(vectors, clusters);
+        update<d>(clusters, vectors);
     }
-    return AssignmentsClusters<d>{assignments, clusters};
+    return clusters;
 }

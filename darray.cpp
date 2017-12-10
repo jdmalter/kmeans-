@@ -2,7 +2,7 @@
 #include "darray.h"
 
 template<csize d>
-double distance(darray<d> &a, darray<d> &b)
+double darrayDistance(const darray<d> &a, const darray<d> &b)
 {
     double sum = 0;
     for (int i = 0; i < d; i++)
@@ -13,7 +13,7 @@ double distance(darray<d> &a, darray<d> &b)
 }
 
 template<csize d>
-string toPrettyString(darray<d> &a)
+string toPrettyString(const darray<d> &a)
 {
     string sum;
     if (0 < d)

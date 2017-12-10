@@ -2,7 +2,9 @@
 #define KMEANS_H
 
 #include <vector>
-#include "assignments.h"
+#include "assignments.cpp"
+
+typedef const unsigned int cu32;
 
 template<csize d>
 struct AssignmentsClusters
@@ -12,7 +14,7 @@ struct AssignmentsClusters
 };
 
 template<csize d>
-AssignmentsClusters<d> run(const vector<darray<d>> &vectors, csize k);
+AssignmentsClusters<d> run(const vector<darray<d>> &vectors, csize k, cu32 iterations);
 
 #endif /* KMEANS_H */
 

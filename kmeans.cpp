@@ -18,11 +18,11 @@ vector<darray<d>> takeRandom(const vector<darray<d>> &vectors, csize k)
 }
 
 template<csize d>
-AssignmentsClusters<d> run(const vector<darray<d>> &vectors, csize k)
+AssignmentsClusters<d> run(const vector<darray<d>> &vectors, csize k, cu32 iterations)
 {
     vector<darray<d>> clusters = takeRandom<d>(vectors, k);
     vector<int> assignments(vectors.size());
-    for (int i = 0; i < 50; i++)
+    for (int i = 0; i < iterations; i++)
     {
         assign<d>(assignments, vectors, clusters);
         update<d>(clusters, vectors, assignments);

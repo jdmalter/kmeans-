@@ -2,10 +2,10 @@
 #include <ctime>
 #include <iostream>
 #include <sstream>
-#include "kmeans.h"
 #include "main.h"
 
 static constexpr csize d = 4;
+static constexpr cu32 iterations = 50;
 
 int main(int argc, char** argv) {
     if (argc != 4)
@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
     }
     
     srand(time(NULL));
-    AssignmentsClusters<d> assignmentsClusters = run<d>(vectors, k);
+    AssignmentsClusters<d> assignmentsClusters = run<d>(vectors, k, iterations);
     write<d>(output, vectors, strings, k, assignmentsClusters);
     
     input.close();

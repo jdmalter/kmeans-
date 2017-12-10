@@ -10,7 +10,7 @@ void assign(vector<int> &assignments,
         double min = MAX;
         for (int j = 0; j < clusters.size(); j++)
         {
-            double dis = distance<d>(vectors[i], clusters[j]);
+            const double dis = darrayDistance<d>(vectors[i], clusters[j]);
             if (min > dis)
             {
                 min = dis;

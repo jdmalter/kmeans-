@@ -1,6 +1,8 @@
 build/Debug/MinGW-Windows/assignments.o: assignments.cpp assignments.h \
- darray.h
+ darray.cpp darray.h
 
 assignments.h:
+
+darray.cpp:
 
 darray.h:

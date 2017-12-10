@@ -12,10 +12,10 @@ template<csize d>
 using darray = array<double, d>;
 
 template<csize d>
-double distance(darray<d> &a, darray<d> &b);
+double darrayDistance(const darray<d> &a, const darray<d> &b);
 
 template<csize d>
-string toPrettyString(darray<d> &a);
+string toPrettyString(const darray<d> &a);
 
 #endif /* DARRAY_H */
 

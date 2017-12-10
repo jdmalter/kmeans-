@@ -3,8 +3,8 @@
 
 #include <fstream>
 #include <vector>
-
 #include "darray.h"
+#include "kmeans.cpp"
 
 using namespace std;
 
@@ -53,11 +53,11 @@ void write(ofstream &output,
             }
         }
         
-        string clusterString(begin(clusters[i]), end(clusters[i]));
+        string clusterString = toPrettyString<d>(clusters[i]);
         output << "cluster at " << clusterString << " with " << group.size() << " vectors" << endl;
         for (int j = 0; j < group.size(); j++)
         {
-            string vectorString(begin(vectors[group[j]]), end(vectors[group[j]]));
+            string vectorString = toPrettyString<d>(vectors[group[j]]);
             output << vectorString << " " << strings[group[j]] << endl;
         }
         output << endl;

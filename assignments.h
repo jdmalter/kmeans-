@@ -3,7 +3,7 @@
 
 #include <limits>
 #include <vector>
-#include "darray.h"
+#include "darray.cpp"
 
 static constexpr double MAX = numeric_limits<double>::max();
 

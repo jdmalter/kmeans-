@@ -24,7 +24,7 @@ vector<darray<d>> run(vector<darray<d>> &vectors, csize k, cu32 iterations)
     vector<darray<d>> clusters = takeRandom<d>(vectors, k);
     for (int i = 0; i < iterations; i++)
     {
-        assign<d>(vectors, clusters);
+        optimzedAssign<d>(vectors, clusters);
         update<d>(clusters, vectors);
     }
     return clusters;

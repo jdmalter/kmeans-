@@ -31,6 +31,8 @@
                    projectFiles="false"
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
+      <itemPath>Relation Network (Directed).data.txt</itemPath>
+      <itemPath>Relation Network (Directed).output.txt</itemPath>
       <itemPath>iris.data.txt</itemPath>
       <itemPath>iris.output.txt</itemPath>
     </logicalFolder>
@@ -45,7 +47,7 @@
       </toolsSet>
       <compileType>
         <ccTool>
-          <standard>11</standard>
+          <commandLine>-fpermissive</commandLine>
         </ccTool>
       </compileType>
       <item path="assignments.cpp" ex="false" tool="1" flavor2="0">

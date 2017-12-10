@@ -4,7 +4,7 @@
 #include <sstream>
 #include "main.h"
 
-static constexpr csize d = 4;
+static constexpr csize d = 22;
 static constexpr cu32 iterations = 50;
 
 int main(int argc, char** argv) {
@@ -41,11 +41,11 @@ int main(int argc, char** argv) {
     for (string line; getline(input, line);)
     {
         stringstream ss(line);
-        vectors.push_back(vectorSelector(ss));
         strings.push_back(labelSelector(ss));
+        vectors.push_back(vectorSelector(ss));
     }
     
-    srand(time(NULL));
+    srand(time(0));
     vector<darray<d>> clusters = run<d>(vectors, k, iterations);
     write<d>(output, vectors, strings, k, clusters);
     

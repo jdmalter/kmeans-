@@ -19,7 +19,7 @@ void assign(vector<darray<d>> &vectors, const vector<darray<d>> &clusters)
 }
 
 template<csize d>
-void optimzedAssign(vector<darray<d>> &vectors, const vector<darray<d>> &clusters)
+void optimizedAssign(vector<darray<d>> &vectors, const vector<darray<d>> &clusters)
 {
     for (int i = 0; i < vectors.size(); i++)
     {

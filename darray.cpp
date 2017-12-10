@@ -30,11 +30,21 @@ string toPrettyString(const darray<d> &a)
     if (0 < d)
     {
         sum += to_string(a[0]);
+        sum.erase(sum.find_last_not_of('0') + 1, string::npos);
+        if (sum.back() == '.')
+        {
+            sum.pop_back();
+        }
     }
     for (int i = 1; i < d; i++)
     {
         sum += ", ";
         sum += to_string(a[i]);
+        sum.erase(sum.find_last_not_of('0') + 1, string::npos);
+        if (sum.back() == '.')
+        {
+            sum.pop_back();
+        }
     }
     return "[" + sum + "]";
 }

@@ -25,11 +25,18 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
-          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" ${OUTPUT_PATH} C:\\Users\\jacob\\Desktop\\iris\\iris.data.txt C:\\Users\\jacob\\Desktop\\iris\\iris.output.txt 3</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" C:\\Users\\jacob\\Desktop\\iris\\iris.data.txt C:\\Users\\jacob\\Desktop\\iris\\iris.output.txt 3</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" </runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" C:\Users\jacob\Documents\NetBeansProjects\kmeans++\ C:\Users\jacob\Documents\NetBeansProjects\kmeans++\</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" C:\Users\jacob\Documents\NetBeansProjects\kmeans++\Relation Network (Directed).data.txt C:\Users\jacob\Documents\NetBeansProjects\kmeans++\Relation Network (Directed).output.txt</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" "C:\Users\jacob\Documents\NetBeansProjects\kmeans++\Relation Network (Directed).data.txt" "C:\Users\jacob\Documents\NetBeansProjects\kmeans++\Relation Network (Directed).output.txt"</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" "C:\Users\jacob\Documents\NetBeansProjects\kmeans++\Relation Network (Directed).data.txt" "C:\Users\jacob\Documents\NetBeansProjects\kmeans++\Relation Network (Directed).output.txt" 5</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" "C:\Users\jacob\Documents\NetBeansProjects\kmeans++\Relation Network (Directed).data.txt" "C:\Users\jacob\Documents\NetBeansProjects\kmeans++\Relation Network (Directed).output.txt" 64</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" "C:\Users\jacob\Documents\NetBeansProjects\kmeans++\Relation Network (Directed).data.txt" "C:\Users\jacob\Documents\NetBeansProjects\kmeans++\Relation Network (Directed).output.txt" 16</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" "C:\Users\jacob\Documents\NetBeansProjects\kmeans++\Relation Network (Directed).data.txt" "C:\Users\jacob\Documents\NetBeansProjects\kmeans++\Relation Network (Directed).output.txt" 32</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" C:\\Users\\jacob\\Desktop\\iris\\iris.data.txt C:\\Users\\jacob\\Desktop\\iris\\iris.output.txt 3</runcommand>
+        <runcommand>"${OUTPUT_PATH}" "C:\Users\jacob\Documents\NetBeansProjects\kmeans++\Relation Network (Directed).data.txt" "C:\Users\jacob\Documents\NetBeansProjects\kmeans++\Relation Network (Directed).output.txt" 32</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>

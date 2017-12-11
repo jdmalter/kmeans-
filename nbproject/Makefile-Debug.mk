@@ -37,8 +37,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/assignments.o \
 	${OBJECTDIR}/darray.o \
-	${OBJECTDIR}/kmeans.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/iris_main.o \
+	${OBJECTDIR}/kegg_main.o \
+	${OBJECTDIR}/kmeans.o
 
 
 # C Compiler Flags
@@ -75,15 +76,20 @@ ${OBJECTDIR}/darray.o: darray.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/darray.o darray.cpp
 
+${OBJECTDIR}/iris_main.o: iris_main.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/iris_main.o iris_main.cpp
+
+${OBJECTDIR}/kegg_main.o: kegg_main.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/kegg_main.o kegg_main.cpp
+
 ${OBJECTDIR}/kmeans.o: kmeans.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/kmeans.o kmeans.cpp
-
-${OBJECTDIR}/main.o: main.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:

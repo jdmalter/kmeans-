@@ -18,8 +18,9 @@
                    projectFiles="true">
       <itemPath>assignments.cpp</itemPath>
       <itemPath>darray.cpp</itemPath>
+      <itemPath>iris_main.cpp</itemPath>
+      <itemPath>kegg_main.cpp</itemPath>
       <itemPath>kmeans.cpp</itemPath>
-      <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -58,11 +59,13 @@
       </item>
       <item path="darray.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="iris_main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="kegg_main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="kmeans.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="kmeans.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="main.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -95,11 +98,13 @@
       </item>
       <item path="darray.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="iris_main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="kegg_main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="kmeans.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="kmeans.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="main.h" ex="false" tool="3" flavor2="0">
       </item>
